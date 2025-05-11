@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct FirebaseModel: Identifiable {
+    var id : String
+    var titulo : String
+    var año : String
+    var director : String
+    var sinopsis: String
+    var imagen : String
+    var genero: String
+}

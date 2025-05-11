@@ -19,10 +19,10 @@ struct CustomTextFieldStyle: ViewModifier {
         content
             .frame(width: ancho, height: alto)
             .background(
-                RoundedRectangle(cornerRadius: 17)
+                RoundedRectangle(cornerRadius: 15)
                     .fill(Color.white)
+                    .stroke(.black)
             )
             .multilineTextAlignment(.center)
-            .padding(.vertical, 5)
     }
 }

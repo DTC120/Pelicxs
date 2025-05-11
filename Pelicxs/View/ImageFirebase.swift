@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct ImageFirebase: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    
+    let imagenAlternativa = UIImage(systemName: "photo")
+    @ObservedObject var imageLoader : ImagenViewModel
+    
+    init(imageUrl: String) {
+        imageLoader = ImagenViewModel(imageUrl: imageUrl)
     }
-}
-
-#Preview {
-    ImageFirebase()
+    
+    var image: UIImage? {
+        imageLoader.data.flatMap(UIImage.init)
+    }
+    
+    var body: some View {
+        Image(uiImage: image ?? imagenAlternativa!)
+            .resizable()
+            .frame(width: 150, height: 220)
+            .foregroundStyle(.black)
+            .cornerRadius(10)
+    }
 }

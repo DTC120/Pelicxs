@@ -5,7 +5,6 @@
 //  Created by Diego Trejo on 19/04/25.
 //
 
-
 import SwiftUI
 import Firebase
 import FirebaseAuth
@@ -26,6 +25,6 @@ struct CustomButtonStyle: ButtonStyle {
             .frame(width: widthButton, height: heightButton)
             .background(background)
             .cornerRadius(15)
-            
+        
     }
 }

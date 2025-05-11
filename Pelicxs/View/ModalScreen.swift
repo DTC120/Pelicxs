@@ -8,29 +8,36 @@
 import SwiftUI
 
 struct ModalScreen: View {
+    
+    var imagen : String
+    var titulo : String
+    var año: String
+    var genero: String
+    var director: String
+    var sinopsis: String
+    
     var body: some View {
         VStack {
-            Image(systemName: "photo")
-                .resizable()
-                .frame(width: 350, height: 300)
-                .padding(.bottom)
+            ImageFirebase(imageUrl: imagen)
+            
+            Spacer().frame(height: 16)
             
             Divider()
             
-            Text("Nombre de la pelicula")
+            Text(titulo)
                 .font(.largeTitle)
                 .fontWeight(.heavy)
                 .padding(.bottom, 5)
             
-            Text("Año de lanzamiento")
+            Text(año)
                 .font(.caption)
                 .padding(.bottom)
             
             HStack {
                 VStack {
-                    Text("Genero:")
+                    Text("Genero: \(genero)")
                         .padding(.bottom, 3)
-                    Text("Director:")
+                    Text("Director: \(director)")
                 }
                 Spacer()
             }
@@ -69,12 +76,8 @@ struct ModalScreen: View {
                     
                     Spacer()
                 }
-                Text("Lorem ipsum odor amet, consectetuer adipiscing elit. Aptent suspendisse facilisi facilisis suscipit sagittis. Non risus dictumst pharetra mauris etiam facilisi feugiat ultricies. ")
+                Text(sinopsis)
         }
         .padding()
     }
-}
-
-#Preview {
-    ModalScreen()
 }

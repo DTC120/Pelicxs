@@ -1,4 +1,3 @@
-//
 //  PelicxsApp.swift
 //  Pelicxs
 //
@@ -6,7 +5,7 @@
 //
 
 import SwiftUI
-import FirebaseCore
+import Firebase
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
@@ -19,11 +18,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct PelicxsApp: App {
     
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
+        
+        let login = FirebaseViewModel()
+        
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(login)
         }
     }
 }
